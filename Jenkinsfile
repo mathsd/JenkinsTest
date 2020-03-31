@@ -10,8 +10,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-		bat 'cmake .'
+                echo 'Testing.. cmake config'
+		bat 'cmake . || true'
+		bat 'make'
             }
         }
         stage('Deploy') {
